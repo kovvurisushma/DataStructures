@@ -1,4 +1,5 @@
 /*
+LeetCode 232 Problem
 
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
@@ -49,8 +50,28 @@ All the calls to pop and peek are valid.
 
 */
 
+====================================================================================================================================================================================================================================
 
 // Method 1: Push heavy - Pushing into Queue takes O(N) time.
+
+/* Approach
+
+     Push()
+*  - Before Pushing an element to a stack first pop all the existing elements from the first stack and push them into second stack
+*  - Now push the current element to the first stack, here we are push the latest element to the last
+*  - Now pop the remaining elements from the second stack and push them to the first stack 
+     so that the first pushed element will always be on the top and the latest pushed element on the bottom.
+
+   Time Complexity: O(N + N) - for Push
+
+   Pop(): 
+*  - since the first entered element will always be on the top of the stack, pop the fist element from the first stack. 
+   Time Complexity: O(1) - for Pop
+
+   Peek():
+* - similar to the pop, since the first entered element will always be on the top of the stack, return the fist element from the stack.
+   Time Complexity: O(1) - for Peek
+*/
 
 class MyQueue {
     Stack<Integer> s1 = new Stack<>();
@@ -79,6 +100,34 @@ class MyQueue {
 
 
 // Method 2: Pop heavy - Popping an element out of queue takes O(N) time
+
+/*
+   Approach
+
+   Push()
+* - Here while pushing we will push directly on to the top of the stack.
+    Time Complexity: O(1)
+
+    Pop():
+* - Similar to the above approach, but here the first entered element will be at the bottom of the stack so to remove that element,
+  - we have to pop all the elements from this stack and push them to the second stack.
+  - now pop the top element from the second stack and return it.
+  - now after that again push all the elements from second stack to the first stack.
+  Time Complexity: O(N + N)
+
+  Peek():
+* - Here if we don't store the latest element in a seperate variable then for Peek also we need to follow the same pop() kind of functionality.
+  - so to not to increase complexity we will use one variable that always contains the front value of the Queue.
+  - to do that, first we have to initialise the front with a value (which wont be present in the queue) most likely something like Integer.MAX_VALUE or Integer.MIN_VALUE
+  - now before pushing element to stack, check if the front value is still initialised value i.e., Integer.MAX_VALUE
+    - if it is equal to Integer.MAX_VALUE, that means the front has not assigned any value. and the current element is the first element of Queue. so make front = current element
+    - if it is not equal dont do anything as there are already elements in the queue and front variable is pointing to first element.
+  - and also after popping of element we have to update front value of the queue as the first element is getting popped.
+  - so after popping the element, check if the stack is empty or not 
+    - if the stack is empty that means there are no elements in the stack and the element that comes next will be first element, so make front = Integer.MAX_VALUE
+    - if the stack is not empty then front = stack.top value
+  - so at any point for getting the peek element return this front variable as this always points to the front of queue.
+*/
 
 class MyQueue {
     Stack<Integer> s1 = new Stack<>();
