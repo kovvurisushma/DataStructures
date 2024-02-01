@@ -25,3 +25,8 @@ keywords to remember: closest/nearest, greater/smaller/largest, towards right/le
 - the celebrity problem
 - longest valid parenthesis
 - Iterative TOH
+
+# Hints to Identify a Stack Problem
+- If the question contains an Array in most cases we can solve it using either stack or heap
+  - if it feels like we have to do some sorting to solve the problem then use heaps
+  - or else in most of the cases stacks will solve the problem
