@@ -10,7 +10,7 @@ struct Node {
 
 Node* mergeSort(Node* head) {
   if(!head) return NULL;
-  Node* midNode = findMid(head);
+  Node* midNode = findMid(head, true);   // always try to find the lower mid or else it will give error
   Node* head2 = midNode -> next;
   midNode -> next = NULL;
   mergeSort(head);
@@ -25,3 +25,4 @@ Node* sortLinkedList(Node* head) {
 Note: Implementations for 
 findMid() -  https://github.com/kovvurisushma/DataStructures/blob/main/Find%20Mid%20of%20Linked%20List
 mergeSortedLists() -  https://github.com/kovvurisushma/DataStructures/blob/main/Merge%202%20Sorted%20LL's
+
