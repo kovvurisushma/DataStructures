@@ -15,11 +15,13 @@ Node* mergeSort(Node* head) {
   midNode -> next = NULL;
   mergeSort(head);
   mergeSort(head2);
-  findMid(head, head2);
+  mergeSortedLists(head, head2);
 }
 
 Node* sortLinkedList(Node* head) {
   return mergeSort(head);
 }
 
-Note: Implementations for findMid() and findMid() is already done, check in other files.
+Note: Implementations for 
+findMid() -  https://github.com/kovvurisushma/DataStructures/blob/main/Find%20Mid%20of%20Linked%20List
+mergeSortedLists() -  https://github.com/kovvurisushma/DataStructures/blob/main/Merge%202%20Sorted%20LL's
