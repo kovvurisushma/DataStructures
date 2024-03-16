@@ -1,0 +1,23 @@
+Problem Statement: Given a linked list, return if it is a palindrome or not
+link: https://leetcode.com/problems/palindrome-linked-list/
+
+Solution:
+
+struct Node {
+  int val;
+  Node* next;
+}
+
+bool isPalindrome(Node* head) {
+  if(!head || !head -> next) return true;
+  Node* lowerMid = findMid(head, false);
+  Node* head2 = lowerMid -> next;
+  lowerMid -> next = NULL;
+  Node* head2Rev = reverse(head2);
+  while(head2Rev) {
+    if(head2Rev -> val != head -> val) return false;
+    head2Rev = head2Rev -> next;
+    head = head -> next;
+  }
+  return true;
+}
