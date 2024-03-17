@@ -22,4 +22,7 @@
     Node left, right;
   }
 
+### Binary Search Tree
+- all(left nodes) < root < all(right nodes)
+
   
