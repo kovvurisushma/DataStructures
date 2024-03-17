@@ -90,3 +90,15 @@ int horizontalDistance(Node* root, int hd) {
   horizontalDistance(root -> left, hd - 1);
   horizontalDistance(root -> right, hd + 1);
 }
+
+Problem: convert given binary tree into its mirror image
+link: https://www.geeksforgeeks.org/write-an-efficient-c-function-to-convert-a-tree-into-its-mirror-tree/
+
+Solution:
+
+void mirror(Node* node) {
+  if(!root) return;
+  mirror(node -> left);
+  mirror(node -> right);
+  swap(node -> left, node -> right);
+}
