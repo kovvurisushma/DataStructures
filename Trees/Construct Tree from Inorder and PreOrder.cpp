@@ -1,7 +1,9 @@
+/*
 Problem Statement: Construct Binary Tree from given In order and Pre order traversal
 link: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+*/
 
-Solution 
+//Solution 
 
     int indx = 0;
     unordered_map<int, int> mp;
@@ -20,10 +22,12 @@ Solution
        return constructTree(preorder, inorder, 0, preorder.size()); 
     }
 
+/*
 Problem Statement: Print Post order traversal from given inorder and preorder traversal
 link: https://www.geeksforgeeks.org/print-postorder-from-given-inorder-and-preorder-traversals/
+*/
 
-Solution
+//Solution
 
 int indx = 0;
 unordered_map<int, int> mp;
