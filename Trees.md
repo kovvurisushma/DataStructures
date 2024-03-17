@@ -15,6 +15,7 @@
 - Internal nodes: nodes which are not leaf nodes or root node.
 - Complete Binary Tree - A binary tree in which all levels are filled except the last level and the last level is filled from left to right
 - Full Binary Tree - A binary tree where every node has either 0 or 2 nodes.
+- horizontalDistance (HD): is the distance of a node from the root node. The HD of the root node is zero. Any node that falls in the vertical line after the root node line will be positive, and any node that falls in the vertical line to the left of the root node will be negative.
 - General structure of a binary tree:
   class Node {
     int data;
