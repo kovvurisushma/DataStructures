@@ -1,7 +1,11 @@
+/*
+
 Problem: Insert Elements into BST
 link: https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
 
-Solution:
+*/
+
+//Solution:
 
 // Iterative
 Node* insertIntoBST(Node* root, int val) {
@@ -21,6 +25,7 @@ Node* insertIntoBST(Node* root, int val) {
 }
 
 // Recursive
+
 TreeNode* insertIntoBST(TreeNode* root, int val) {
   TreeNode* nn = new TreeNode(val);
   if(!root) return nn;
@@ -29,10 +34,12 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
   return root;
 }
 
+/*
 Problem: Search the given element in the given BST
 link: https://leetcode.com/problems/search-in-a-binary-search-tree/description/
+*/
 
-Solution:
+//Solution:
 
 //recursive
 Node* searchBST(Node* root, int val) {
