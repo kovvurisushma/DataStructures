@@ -1,7 +1,11 @@
+/*
+
 Problem: Delete a node in BST
 link: https://leetcode.com/problems/delete-node-in-a-bst/description/
 
-Solution:
+*/
+
+//Solution:
 
 Node* DeleteBST(Node* root, int x) {
   if(!root) return root;
