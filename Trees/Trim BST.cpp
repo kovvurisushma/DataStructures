@@ -1,7 +1,9 @@
+/*
 Problem Statement: Trim the given BST, such that all the nodes will be in the given range[a,b]
 link: https://leetcode.com/problems/trim-a-binary-search-tree/
+*/
 
-Solution
+// Solution
 
     TreeNode* trimBST(TreeNode* root, int low, int high) {
         if(!root) return root;
