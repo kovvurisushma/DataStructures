@@ -1,7 +1,9 @@
+/*
 Problem: Given a Binary tree, print the pre-order traversal
 link: https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+*/
 
-Solution:
+// Solution:
 
 void preorderTraversal(Node* root) {
   if(!root) return;
@@ -10,10 +12,14 @@ void preorderTraversal(Node* root) {
   preorderTraversal(root -> right);
 }
 
+/*
+
 Problem: Given a Binary Tree, print the post-order traversal
 link: https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 
-Solution:
+*/
+
+// Solution:
 
 void postOrderTraversal(Node* root) {
   if(!root) return;
@@ -22,10 +28,10 @@ void postOrderTraversal(Node* root) {
   print(root);
 }
 
-Problem: Given a Binary Tree, Print inorder traversal
-link: https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+// Problem: Given a Binary Tree, Print inorder traversal
+// link: https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 
-Solution:
+// Solution:
 
 void inorderTraversal(Node* root) {
   if(!root) return;
@@ -34,20 +40,20 @@ void inorderTraversal(Node* root) {
   inorderTraversal(root -> right);
 }
 
-Problem: Given a Binary Tree, count number of nodes inside it
-link: https://leetcode.com/problems/count-complete-tree-nodes/description/
+// Problem: Given a Binary Tree, count number of nodes inside it
+// link: https://leetcode.com/problems/count-complete-tree-nodes/description/
 
-Solution:
+// Solution:
 
 int count(Node* root) {
   if(!root) return 0;
   return count(root -> left) + count(root -> right) + 1;
 }
 
-Problem: return sum of all nodes of a binary tree
-link: https://www.geeksforgeeks.org/sum-nodes-binary-tree/
+// Problem: return sum of all nodes of a binary tree
+// link: https://www.geeksforgeeks.org/sum-nodes-binary-tree/
 
-Solution:
+// Solution:
 
 int sumOfAllNodes(Node* root) {
   if(!root) return;
@@ -55,10 +61,10 @@ int sumOfAllNodes(Node* root) {
 }
 
 
-Problem: return max and min node in the given binary tree
-link: https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/
+// Problem: return max and min node in the given binary tree
+// link: https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/
 
-Solution:
+// Solution:
 
 int findMax(Node *root) {
   if(!root) return INT_MIN;
@@ -69,8 +75,8 @@ int findMin(Node *root) {
   return min(findMin(root -> left), min(findMin(root -> right), root -> data));
 }
 
-Problem: return the height of the given binary tree
-link: https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+// Problem: return the height of the given binary tree
+// link: https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
 Solution:
 
@@ -79,10 +85,10 @@ int maxDepth(TreeNode* root) {
   return max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
 }
 
-Problem: return the horizontal distance of given binary tree
-link:
+// Problem: return the horizontal distance of given binary tree
+// link:
 
-Solution:
+// Solution:
 
 int horizontalDistance(Node* root, int hd) {
   if(!root) return hd;
@@ -91,10 +97,10 @@ int horizontalDistance(Node* root, int hd) {
   horizontalDistance(root -> right, hd + 1);
 }
 
-Problem: convert given binary tree into its mirror image
-link: https://www.geeksforgeeks.org/write-an-efficient-c-function-to-convert-a-tree-into-its-mirror-tree/
+// Problem: convert given binary tree into its mirror image
+// link: https://www.geeksforgeeks.org/write-an-efficient-c-function-to-convert-a-tree-into-its-mirror-tree/
 
-Solution:
+// Solution:
 
 void mirror(Node* node) {
   if(!root) return;
