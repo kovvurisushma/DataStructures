@@ -1,0 +1,24 @@
+Problem Statement: Find the Middle element in the linked list, given a variable lower indicating which mid value to return in case of even number of elements,
+                   if lower is true then return lower mid else return higher mid
+link: https://leetcode.com/problems/middle-of-the-linked-list/description/
+
+Solution:
+
+struct Node{
+  int val;
+  Node* next = val;
+}
+
+Node* getMid(Node* head) {
+  Node* slow = head;
+  Node* fast = head;
+  Node* prev = NULL;
+  int n = lengthOfLL(head);
+  while(fast && fast -> next) {
+    prev = slow;
+    slow = slow -> next;
+    fast = fast -> next -> next;
+  }
+  if(n % 2 == 0 && lower) return prev;
+  return slow;
+}

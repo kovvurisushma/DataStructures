@@ -1,0 +1,31 @@
+Problem Statement: Detect if there exists a cycle in Linked list, if exists then break the cycle
+link: https://leetcode.com/problems/linked-list-cycle-ii/description/
+      https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
+
+Approaches:
+- for every node, iterate over the remaining linked list and check if the same address is present
+- main a set of previous address and check if the address is present
+- using slow and fast pointer for detecting cycle.
+
+Solution:
+
+struct Node {
+  int val;
+  Node* next;
+}
+
+Node* detectAndBreakLoop(Node* head) {
+  Node* slow = head;
+  Node* fast = head;
+  while(fast && fast -> next) {
+    if(slow == fast) {
+      slow -> next = NULL;
+      return head;
+    }
+    slow = slow -> next;
+    fast = fast -> next -> next;
+  }
+  return head;
+}
+
+https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
