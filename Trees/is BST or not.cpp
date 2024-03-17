@@ -1,7 +1,9 @@
+/*
 Problem: Given a Binary Tree, check whether it is BST or not
 link: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
 
-Solution: 
+// Solution: 
 
 int prev = INT_MIN;
 bool isBST(Node* root, int prev) {
@@ -12,7 +14,7 @@ bool isBST(Node* root, int prev) {
   return l && isBST(root -> right);
 }
 
-Approach2
+// Approach2
 
 bool isBST(Node* root, int lo, int hi) {
   if(!root) return true;
